@@ -31,7 +31,7 @@ public class ProgramPanel extends BasePanel {
 
         super(MAX_FPS);
 
-        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        this.setPreferredSize(new Dimension(STANDARD_SCREEN_WIDTH, STANDARD_SCREEN_HEIGHT));
         this.setBackground(BACKGROUND_COLOR);
 
         this.setDoubleBuffered(true);

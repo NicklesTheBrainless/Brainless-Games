@@ -4,8 +4,6 @@ import games.Game;
 
 import java.awt.*;
 
-import static base.setting.Settings.SCREEN_HEIGHT;
-import static base.setting.Settings.SCREEN_WIDTH;
 import static utils.ResourceUtils.readImage;
 
 public class BouncingBallGame extends Game {
@@ -16,7 +14,7 @@ public class BouncingBallGame extends Game {
     private Color color;
 
     public BouncingBallGame() {
-        icon = readImage("/game_icons/bouncing_ball_game.png");
+        icon = readImage("/game_icons/bouncing_ball.png");
     }
 
 
@@ -25,8 +23,8 @@ public class BouncingBallGame extends Game {
     public void onStart() {
 
         radius = 20;
-        x = SCREEN_WIDTH / 2;
-        y = SCREEN_HEIGHT / 2;
+        x = screenWidth / 2;
+        y = screenHeight / 2;
         vx = 13;
         vy = 9;
         color = new Color(217, 87, 99);
@@ -38,9 +36,9 @@ public class BouncingBallGame extends Game {
         x += vx;
         y += vy;
 
-        if (x - radius < 0   ||   x + radius > SCREEN_WIDTH)
+        if (x - radius < 0   ||   x + radius > screenWidth)
             vx = -vx;
-        if (y - radius < 0   ||   y + radius > SCREEN_HEIGHT)
+        if (y - radius < 0   ||   y + radius > screenHeight)
             vy = -vy;
     }
 

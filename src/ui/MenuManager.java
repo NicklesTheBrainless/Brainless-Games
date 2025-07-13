@@ -3,6 +3,7 @@ package ui;
 import base.panel.ProgramPanel;
 import games.bouncing_ball_game.BouncingBallGame;
 import games.Game;
+import games.ping_pong_game.PingPongGame;
 import utils.objects.ProgramObject;
 
 import java.awt.*;
@@ -11,7 +12,7 @@ public class MenuManager implements ProgramObject {
 
     ProgramPanel panel;
 
-    Game[] games = {new BouncingBallGame()};
+    Game[] games = { new BouncingBallGame(), new PingPongGame() };
     RectButton[] gameButtons = new RectButton[games.length];
 
     public MenuManager(ProgramPanel panel) {
