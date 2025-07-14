@@ -15,7 +15,6 @@ public class PingPongGame extends Game {
     @Override
     public void onStart() {
 
-        // TODO: make so that this settings, make the window actually smaller
         screenWidth  = 800;
         screenHeight = 500;
 

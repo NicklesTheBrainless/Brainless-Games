@@ -7,6 +7,7 @@ import base.listeners.MouseWheelHandler;
 import games.Game;
 import ui.MenuManager;
 
+import javax.swing.*;
 import java.awt.*;
 
 import static base.setting.Settings.*;
@@ -49,10 +50,12 @@ public class ProgramPanel extends BasePanel {
     @Override
     protected void update() {
 
-        if (game == null)
+        if (game == null){
             menuM.update();
-        else
+        } else {
             game.update();
+            SwingUtilities.getWindowAncestor(this).setSize(game.screenWidth, game.screenHeight);
+        }
 
         // update listeners
         keyH.update();
