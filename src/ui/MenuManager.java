@@ -50,6 +50,12 @@ public class MenuManager implements ProgramObject {
 
 
     private void startGame(Game game) {
+
+        game.keyH = panel.keyH;
+        game.mouseButtonH = panel.mouseButtonH;
+        game.mouseMotionH = panel.mouseMotionH;
+        game.mouseWheelH  = panel.mouseWheelH;
+
         panel.game = game;
         game.onStart();
     }

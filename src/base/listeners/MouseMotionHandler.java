@@ -34,20 +34,20 @@ public class MouseMotionHandler implements MouseMotionListener {
     public Point getMousePosition() {
         return new Point(mousePosition);
     }
-    public int getX() {
+    public int getPositionX() {
         return mousePosition.x;
     }
-    public int getY() {
+    public int getPositionY() {
         return mousePosition.y;
     }
 
     public Point getMouseVelocity() {
         return new Point(mouseVelocity);
     }
-    public int getVX() {
+    public int getVelocityX() {
         return mouseVelocity.x;
     }
-    public int getVY() {
+    public int getVelocityY() {
         return mouseVelocity.y;
     }
 
