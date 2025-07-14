@@ -1,11 +1,11 @@
-package base.listeners;
+package base.listeners.keyboard;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashSet;
 import java.util.Set;
 
-public class KeyHandler implements KeyListener {
+public class KeyBoardHandler implements KeyListener {
 
     private final Set<Integer> pressedKeys = new HashSet<>();
     private final Set<Integer> keyJustPressed = new HashSet<>();

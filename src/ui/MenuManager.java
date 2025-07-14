@@ -26,7 +26,7 @@ public class MenuManager implements ProgramObject {
             final int finalGameIndex = i;
             Runnable onClicked = () -> this.startGame(games[finalGameIndex]);
 
-            RectButton gameButton = new RectButton(panel.mouseButtonH, panel.mouseMotionH,
+            RectButton gameButton = new RectButton(panel.input.mouseButton, panel.input.mouseMotion,
                     buttonX, buttonY, 250, 250, games[i].icon, onClicked);
 
             gameButtons[i] = gameButton;
@@ -50,12 +50,7 @@ public class MenuManager implements ProgramObject {
 
 
     private void startGame(Game game) {
-
-        game.keyH = panel.keyH;
-        game.mouseButtonH = panel.mouseButtonH;
-        game.mouseMotionH = panel.mouseMotionH;
-        game.mouseWheelH  = panel.mouseWheelH;
-
+        game.input = panel.input;
         panel.game = game;
         game.onStart();
     }

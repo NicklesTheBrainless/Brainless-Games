@@ -1,9 +1,6 @@
 package base.panel;
 
-import base.listeners.KeyHandler;
-import base.listeners.MouseButtonHandler;
-import base.listeners.MouseMotionHandler;
-import base.listeners.MouseWheelHandler;
+import base.listeners.InputHandler;
 import games.Game;
 import ui.MenuManager;
 
@@ -14,15 +11,10 @@ import static base.setting.Settings.*;
 
 public class ProgramPanel extends BasePanel {
 
-    // keyboard input listener
-    public KeyHandler keyH = new KeyHandler();
+    // input listeners (keyboard + mouse)
+    public InputHandler input = new InputHandler(this);
 
-    // mouse input listeners
-    public MouseButtonHandler mouseButtonH = new MouseButtonHandler();
-    public MouseMotionHandler mouseMotionH = new MouseMotionHandler();
-    public MouseWheelHandler  mouseWheelH  = new MouseWheelHandler();
-
-    // menu
+    // menu (to select a game to play)
     MenuManager menuM = new MenuManager(this);
 
     // current game
@@ -37,12 +29,6 @@ public class ProgramPanel extends BasePanel {
 
         this.setDoubleBuffered(true);
         this.setFocusable(true);
-
-        this.addKeyListener(keyH);
-
-        this.addMouseListener(mouseButtonH);
-        this.addMouseMotionListener(mouseMotionH);
-        this.addMouseWheelListener(mouseWheelH);
     }
 
 
@@ -58,10 +44,7 @@ public class ProgramPanel extends BasePanel {
         }
 
         // update listeners
-        keyH.update();
-        mouseButtonH.update();
-        mouseMotionH.update();
-        mouseWheelH.update();
+        input.update();
     }
 
     @Override

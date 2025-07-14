@@ -27,7 +27,7 @@ public class PingPongGame extends Game {
 
     @Override
     public void update() {
-        // TODO: add controls here, with the KeyHandler, this needs some refactoring in other classes
+        // TODO: add controls here, with the KeyBoardHandler, this needs some refactoring in other classes
         ball.update(screenWidth, screenHeight, leftPaddle, rightPaddle);
         leftPaddle.moveUp();
         rightPaddle.moveDown();

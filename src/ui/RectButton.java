@@ -1,7 +1,7 @@
 package ui;
 
-import base.listeners.MouseButtonHandler;
-import base.listeners.MouseMotionHandler;
+import base.listeners.mouse.MouseButtonHandler;
+import base.listeners.mouse.MouseMotionHandler;
 import utils.objects.ProgramObject;
 
 import java.awt.*;
