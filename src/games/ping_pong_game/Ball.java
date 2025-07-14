@@ -14,12 +14,12 @@ public class Ball {
         this.y = y;
     }
 
-    public void update(int screenWidth, int screenHeight, Paddle left, Paddle right) {
+    public void update(Paddle left, Paddle right) {
 
         x += vx;
         y += vy;
 
-        if (y - radius < 0 || y + radius > screenHeight)
+        if (y - radius < 0 || y + radius > PingPongGame.GAME.screenHeight)
             vy = -vy;
 
         boolean collidesLeft  = left.intersects(x - radius, y - radius, radius * 2, radius * 2);
@@ -28,9 +28,9 @@ public class Ball {
             vx = -vx;
 
 
-        if (x + radius < 0 || x - radius > screenWidth) {
-            x = screenWidth / 2;
-            y = screenHeight / 2;
+        if (x + radius < 0 || x - radius > PingPongGame.GAME.screenWidth) {
+            x = PingPongGame.GAME.screenWidth  / 2;
+            y = PingPongGame.GAME.screenHeight / 2;
         }
     }
 

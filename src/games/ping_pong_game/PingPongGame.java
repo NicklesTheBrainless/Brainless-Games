@@ -4,9 +4,12 @@ import games.Game;
 
 import java.awt.*;
 
+import static java.awt.event.KeyEvent.*;
 import static utils.ResourceUtils.readImage;
 
 public class PingPongGame extends Game {
+
+    public static PingPongGame GAME;
 
     private Ball ball;
     private Paddle leftPaddle;
@@ -15,8 +18,10 @@ public class PingPongGame extends Game {
     @Override
     public void onStart() {
 
+        GAME = this;
+
         screenWidth  = 800;
-        screenHeight = 500;
+        screenHeight = 600;
 
         ball = new Ball(screenWidth / 2, screenHeight / 2);
         leftPaddle = new Paddle(30, screenHeight / 2 - 40);
@@ -27,10 +32,18 @@ public class PingPongGame extends Game {
 
     @Override
     public void update() {
-        // TODO: add controls here, with the KeyBoardHandler, this needs some refactoring in other classes
-        ball.update(screenWidth, screenHeight, leftPaddle, rightPaddle);
-        leftPaddle.moveUp();
-        rightPaddle.moveDown();
+
+        ball.update(leftPaddle, rightPaddle);
+
+        if (input.keyBoard.isKeyPressed(VK_W))
+            leftPaddle.moveUp();
+        if (input.keyBoard.isKeyPressed(VK_S))
+            leftPaddle.moveDown();
+
+        if (input.keyBoard.isKeyPressed(VK_UP))
+            rightPaddle.moveUp();
+        if (input.keyBoard.isKeyPressed(VK_DOWN))
+            rightPaddle.moveDown();
     }
 
     @Override

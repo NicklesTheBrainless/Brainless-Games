@@ -6,8 +6,8 @@ public class Paddle {
 
     private int x, y;
     private final int width = 10;
-    private final int height = 80;
-    private final int speed = 4;
+    private final int height = 100;
+    private final int speed = 6;
 
     public Paddle(int x, int y) {
         this.x = x;
@@ -22,8 +22,9 @@ public class Paddle {
 
     public void moveDown() {
         y += speed;
-        if (y + height > 800)
-            y = 800 - height;
+        if (y + height > PingPongGame.GAME.screenHeight)
+            y = PingPongGame.GAME.screenHeight - height;
+        System.out.println(y);
     }
 
     public boolean intersects(int bx, int by, int bw, int bh) {
